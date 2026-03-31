@@ -41,11 +41,9 @@ class ExpressionParser:
             return f"Errore: {str(e)}"
 
     def _evaluate(self, node):
-        # Costanti e numeri
+        # Costanti e numeri (ast.Constant gestisce anche i numeri nelle versioni recenti di Python)
         if isinstance(node, ast.Constant):
             return node.value
-        elif isinstance(node, ast.Num):
-            return node.n
 
         # Gestione variabile ANS (richiama l'istanza della memoria)
         elif isinstance(node, ast.Name):
