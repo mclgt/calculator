@@ -1,0 +1,27 @@
+import basic_operations 
+import pytest
+def test_positive_sum(): 
+    assert basic_operations.add(3,4)==7
+def test_negative_sum(): 
+    assert basic_operations.add(-1,-4)==-5
+def test_mixed_sum(): 
+    assert basic_operations.add(10,-3)==7
+def test_positive_sub(): 
+    assert basic_operations.sub(5,4)==1
+def test_negative_sub(): 
+    assert basic_operations.sub(-3,-2)==-1
+def test_mixed_sub(): 
+    assert basic_operations.sub(41,-1)==42
+def test_positive_div(): 
+    assert basic_operations.divide(16,4)==4
+def test_negative_div(): 
+    assert basic_operations.divide(-5,-5)==1
+def test_zero_div(): 
+    with pytest.raises(Exception):
+        basic_operations.divide(10,0)
+def test_positive_mul(): 
+    assert basic_operations.multiply(3,4)==12
+def test_negative_mul(): 
+    assert basic_operations.multiply(-1,-6)==6
+def test_mixed_mul(): 
+    assert basic_operations.multiply(2,-6)==-12
