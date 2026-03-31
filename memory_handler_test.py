@@ -45,5 +45,4 @@ class TestMemory:
     def test_get_last_without_saves(self):
         """Verifica il comportamento di get_last su un'istanza nuova."""
         mem = Memory()
-
         assert mem.get_last() == 0
