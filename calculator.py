@@ -3,10 +3,10 @@ import memory_handler
 memory=memory_handler.Memory()
 parser=expression_parser.ExpressionParser(memory)
 while(True): 
-    print ("Select an operation:\n1.Evaluate Expression\n2.See history")
+    print ("\nSelect an operation:\n1.Evaluate Expression\n2.See history\n")
     choice=input()
     if choice=='1':
-        print("Insert your expression here:")
+        print("Insert your expression here:\n(Use ans to refer to the last result)\n")
         expression=input()
         result=parser.parse(expression)  
         print("Result:", result)
