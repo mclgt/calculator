@@ -3,13 +3,14 @@ import basic_operations
 from memory_handler import Memory
 
 class ExpressionParser:
-    def __init__(self):
+    def __init__(self, memoryinstance):
         self.operators = {
             ast.Add: basic_operations.add,
             ast.Sub: basic_operations.sub,
             ast.Mult: basic_operations.multiply,
             ast.Div: basic_operations.divide,
         }
+        self.memory = memoryinstance
 
     def parse(self, expression):
         try:
@@ -32,7 +33,7 @@ class ExpressionParser:
         # 2. Variabile 'ans'
         elif isinstance(node, ast.Name):
             if node.id.lower() == 'ans':
-                return float(Memory.get_last())
+                return float(self.memory.get_last())
             raise ValueError(f"Variabile '{node.id}' non riconosciuta. Usa solo 'ans'.")
 
         # 3. Operazioni matematiche binarie (+, -, *, /)
